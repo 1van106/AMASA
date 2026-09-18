@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "AMASA",
+    "slug": "CambioFisico",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ivanb.cambiofisico"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0B0D",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.ivanb.cambiofisico"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "color": "#4D7CFE"
+        }
+      ],
+      "expo-font",
+      "expo-splash-screen"
+    ],
+    "scheme": "cambiofisico",
+    "backgroundColor": "#0A0B0D"
+  }
+}
