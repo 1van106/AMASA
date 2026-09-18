@@ -1,75 +1,188 @@
-# Cambio Físico
+<div align="center">
 
-App móvil personal de fitness (React Native + Expo + TypeScript) para el bloque de
-**109 días: 14/09/2026 → 01/01/2027**.
+<img src="assets/icon.png" alt="AMASA" width="128" height="128">
 
-Diseño propio **"Cambio Físico v2"**: tema oscuro, Space Grotesk +
-IBM Plex Mono, y la paleta neón por grupo — Empuje `#4D7CFE`, Tirón `#00D68F`,
-Pierna `#B46BFF`, prioridad `#FFB020`.
+# AMASA
 
-## Arrancar
+**Seguimiento de entrenamiento de fuerza para Android e iOS.**
+Rutina editable, calendario de actividad y control de peso corporal.
 
-```bash
-cd CambioFisico
-npx expo start
-```
+<br>
 
-Escanea el QR con **Expo Go** (Android/iOS) o pulsa `a` / `i` para abrir en emulador.
-Las notificaciones locales funcionan en Expo Go; para que sean 100 % fiables en Android
-conviene una *development build* (`npx expo run:android`).
+![React Native](https://img.shields.io/badge/React_Native-0.86-61DAFB?style=for-the-badge&logo=react&logoColor=white&labelColor=0A0B0D)
+![Expo](https://img.shields.io/badge/Expo_SDK-57-000020?style=for-the-badge&logo=expo&logoColor=white&labelColor=0A0B0D)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white&labelColor=0A0B0D)
+![Android](https://img.shields.io/badge/Android-6.0+-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=0A0B0D)
+![Licencia](https://img.shields.io/badge/Licencia-MIT-F2F3F5?style=for-the-badge&labelColor=0A0B0D)
 
-## Pestañas
+</div>
 
-| Pestaña | Qué hace |
-| --- | --- |
-| **Hoy** | Fecha y "día N/109", la sesión que toca en tipografía grande, botón **He entrenado hoy** (marca el día y avanza la rotación), tarjetas de peso y racha, barra de progreso del bloque, mapa de calor de 8 semanas y aviso de tirada. |
-| **Rutina** | Chips con las 6 sesiones, la abierta con su prioridad y los 6 ejercicios (número, nombre, series x reps, descanso, ★ prioridad) + tarjeta con la regla de las carreras. |
-| **Calendario** | Mes navegable; toca cualquier día para marcarlo/desmarcarlo, coloreado por grupo muscular. Leyenda y stats del mes (entrenos y media semanal). |
-| **Peso** | Peso actual y diferencia, curva de evolución, formulario (fecha + kg + nota) y lista de registros. |
-| **Ajustes** | Notificaciones, hora del aviso de entrenamiento, día + hora del aviso de pesarse, datos del bloque (inicio, objetivo, peso inicial, altura), tarjeta de Dieta en construcción y *Reiniciar rotación a Empuje A*. |
+<br>
 
-## Lógica de la rotación
+---
 
-Secuencia fija que se repite en bucle (módulo 6):
+<div align="center">
 
-```
-Empuje A → Tirón A → Pierna A → Empuje B → Tirón B → Pierna B → (vuelve a Empuje A)
-```
+### Interfaz
 
-El puntero vive en `AsyncStorage`. Marcar un día guarda **qué sesión** se hizo ese día y
-avanza el puntero; desmarcar borra el día pero no retrocede el puntero (igual que el
-prototipo: la rotación se recoloca sola con el siguiente entreno, y siempre puedes usar
-*Reiniciar rotación* en Ajustes).
+<table>
+<tr>
+<td align="center" width="33%"><img src="docs/capturas/rutina.png" width="230" alt="Rutina"></td>
+<td align="center" width="33%"><img src="docs/capturas/calendario.png" width="230" alt="Calendario"></td>
+<td align="center" width="33%"><img src="docs/capturas/dia.png" width="230" alt="Detalle del día"></td>
+</tr>
+<tr>
+<td align="center"><b>Rutina</b><br><sub>Sesiones y ejercicios editables</sub></td>
+<td align="center"><b>Calendario</b><br><sub>Actividad por día y color</sub></td>
+<td align="center"><b>Detalle</b><br><sub>Qué se hizo y anotaciones</sub></td>
+</tr>
+</table>
 
-La racha cuenta días consecutivos hacia atrás desde hoy; que hoy aún no esté marcado no
-la rompe.
+</div>
+
+---
+
+## Características
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### Rutina editable
+
+Sesiones y ejercicios totalmente configurables: nombre, grupo muscular, series,
+repeticiones, descanso y prioridad. Se pueden crear, borrar y reordenar, y la
+rotación avanza sola al marcar un entrenamiento.
+
+</td>
+<td width="50%" valign="top">
+
+### Calendario de actividad
+
+Cada día se colorea según el grupo muscular trabajado, con una franja naranja
+para las carreras y un indicador para los días con anotaciones. Los días pasados
+se atenúan para situar la fecha actual de un vistazo.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### Resumen anual
+
+Los doce meses en miniatura con un punto por día, navegable entre años, con
+totales de entrenamientos, carreras y notas, y el reparto por grupo muscular.
+
+</td>
+<td width="50%" valign="top">
+
+### Peso corporal
+
+Registro por fecha con nota opcional, curva de evolución dibujada en SVG y
+diferencia acumulada respecto al peso inicial.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### Recordatorios locales
+
+Aviso diario de entrenamiento que se omite en los días ya entrenados, y
+recordatorio semanal de pesaje. Sin servidor: todo se programa en el dispositivo.
+
+</td>
+<td width="50%" valign="top">
+
+### Sin conexión y sin cuentas
+
+Todos los datos viven en el dispositivo mediante `AsyncStorage`. No hay registro,
+ni servidor, ni telemetría.
+
+</td>
+</tr>
+</table>
+
+---
+
+## Stack
+
+| Capa | Tecnología |
+| :--- | :--- |
+| Framework | React Native 0.86 · Expo SDK 57 |
+| Lenguaje | TypeScript (modo estricto) |
+| Navegación | React Navigation · Material Top Tabs con gestos |
+| Persistencia | AsyncStorage |
+| Gráficos | react-native-svg |
+| Notificaciones | expo-notifications |
+| Tipografías | Space Grotesk · IBM Plex Mono |
+
+---
 
 ## Estructura
 
 ```
-App.tsx                      Carga de fuentes, providers y NavigationContainer
-src/theme.ts                 Tokens del diseño v2 (colores, fuentes, radios)
-src/data/routine.ts          Constantes del bloque + las 6 sesiones con sus ejercicios
-src/state/AppContext.tsx     Estado global (rotación, días marcados, pesos, ajustes)
-src/lib/storage.ts           AsyncStorage con validación y merge de valores por defecto
-src/lib/notifications.ts     expo-notifications: permisos y recordatorios diario/semanal
-src/lib/dates.ts             Utilidades de fecha en formato YYYY-MM-DD (hora local)
-src/components/              Primitivas de UI, curva de peso en SVG, pickers de fecha/hora
-src/navigation/              Tabs + barra inferior personalizada del diseño
-src/screens/                 Hoy · Rutina · Calendario · Peso · Ajustes
+src/
+├── components/     Primitivas de UI, editores, selectores y gráficos
+├── data/           Rutina de fábrica y tipos de sesión/ejercicio
+├── lib/            Almacenamiento, fechas y notificaciones
+├── navigation/     Navegador de pestañas y barra inferior
+├── screens/        Inicio · Rutina · Calendario · Peso · Ajustes
+├── state/          Contexto global y tipos del estado
+└── theme.ts        Tokens de color, tipografía y espaciado
 ```
 
-## Diferencias respecto al prototipo
+---
 
-El prototipo es una maqueta web; estas son las adaptaciones a app nativa:
+## Puesta en marcha
 
-- Los `<input type="date|time">` y el `<select>` del navegador se sustituyen por
-  `@react-native-community/datetimepicker` y un selector modal, con el mismo aspecto.
-- **Editar un registro de peso**: en el prototipo solo se puede borrar. Aquí, tocar una
-  fila la carga en el formulario; guardar sobre esa misma fecha la sustituye (una entrada
-  por día, como en el prototipo).
-- La curva de peso está redibujada con `react-native-svg` (mismas proporciones, área y
-  color); `react-native-chart-kit` y `victory-native` no están al día con React 19 + RN 0.86.
-- Todo el estado persiste en el dispositivo, cosa que el prototipo no hacía.
+```bash
+git clone https://github.com/1van106/AMASA.git
+cd AMASA
+npm install
+```
 
-Comprobado con `npx tsc --noEmit`, `npx expo export -p android` y `npx expo-doctor` (21/21).
+**Desarrollo**
+
+```bash
+npx expo start
+```
+
+**Compilar el APK de Android**
+
+Las carpetas nativas no se versionan: se generan a partir de `app.json`.
+
+```bash
+npx expo prebuild --platform android
+cd android && ./gradlew assembleRelease
+```
+
+El APK queda en `android/app/build/outputs/apk/release/`.
+
+> [!NOTE]
+> Los recordatorios locales requieren una compilación propia. Expo Go retiró el
+> soporte de notificaciones en Android a partir del SDK 53.
+
+---
+
+## Diseño
+
+Tema oscuro sobre `#0A0B0D`, con un color por grupo muscular que se mantiene
+coherente en toda la app: calendario, resumen anual, barra de navegación y
+etiquetas de sesión.
+
+<div align="center">
+
+| Empuje | Tirón | Pierna | Carrera | Prioridad |
+| :---: | :---: | :---: | :---: | :---: |
+| `#4D7CFE` | `#00D68F` | `#B46BFF` | `#FF8A3D` | `#FFB020` |
+
+</div>
+
+---
+
+<div align="center">
+
+Publicado bajo licencia MIT.
+
+</div>
