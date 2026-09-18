@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/icon.png" alt="AMASA" width="128" height="128">
+<img src="docs/logo.png" alt="AMASA" width="220">
 
 # AMASA
 
