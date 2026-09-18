@@ -13,7 +13,7 @@ Rutina editable, calendario de actividad y control de peso corporal.
 ![Expo](https://img.shields.io/badge/Expo_SDK-57-000020?style=for-the-badge&logo=expo&logoColor=white&labelColor=0A0B0D)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white&labelColor=0A0B0D)
 ![Android](https://img.shields.io/badge/Android-6.0+-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=0A0B0D)
-![Licencia](https://img.shields.io/badge/Licencia-MIT-F2F3F5?style=for-the-badge&labelColor=0A0B0D)
+![Licencia](https://img.shields.io/badge/Licencia-Derechos_reservados-FF6B5E?style=for-the-badge&labelColor=0A0B0D)
 
 </div>
 
@@ -201,6 +201,6 @@ etiquetas de sesión.
 
 <div align="center">
 
-Publicado bajo licencia MIT.
+Código publicado para consulta. Todos los derechos reservados.
 
 </div>
