@@ -19,11 +19,9 @@ Rutina editable, calendario de actividad y control de peso corporal.
 
 <br>
 
----
-
 <div align="center">
 
-### Interfaz
+![Interfaz](https://img.shields.io/badge/INTERFAZ-4D7CFE?style=for-the-badge&labelColor=4D7CFE)
 
 <table>
 <tr>
@@ -40,15 +38,19 @@ Rutina editable, calendario de actividad y control de peso corporal.
 
 </div>
 
----
+<br>
 
-## Características
+<div align="center">
+
+![Funciones](https://img.shields.io/badge/FUNCIONES-00D68F?style=for-the-badge&labelColor=00D68F)
+
+</div>
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### Rutina editable
+### ![](https://img.shields.io/badge/-4D7CFE?style=flat-square) &nbsp;Rutina editable
 
 Sesiones y ejercicios totalmente configurables: nombre, grupo muscular, series,
 repeticiones, descanso y prioridad. Se pueden crear, borrar y reordenar, y la
@@ -57,7 +59,7 @@ rotación avanza sola al marcar un entrenamiento.
 </td>
 <td width="50%" valign="top">
 
-### Calendario de actividad
+### ![](https://img.shields.io/badge/-B46BFF?style=flat-square) &nbsp;Calendario de actividad
 
 Cada día se colorea según el grupo muscular trabajado, con una franja naranja
 para las carreras y un indicador para los días con anotaciones. Los días pasados
@@ -68,7 +70,7 @@ se atenúan para situar la fecha actual de un vistazo.
 <tr>
 <td width="50%" valign="top">
 
-### Resumen anual
+### ![](https://img.shields.io/badge/-00D68F?style=flat-square) &nbsp;Resumen anual
 
 Los doce meses en miniatura con un punto por día, navegable entre años, con
 totales de entrenamientos, carreras y notas, y el reparto por grupo muscular.
@@ -76,7 +78,7 @@ totales de entrenamientos, carreras y notas, y el reparto por grupo muscular.
 </td>
 <td width="50%" valign="top">
 
-### Peso corporal
+### ![](https://img.shields.io/badge/-FF8A3D?style=flat-square) &nbsp;Peso corporal
 
 Registro por fecha con nota opcional, curva de evolución dibujada en SVG y
 diferencia acumulada respecto al peso inicial.
@@ -86,7 +88,7 @@ diferencia acumulada respecto al peso inicial.
 <tr>
 <td width="50%" valign="top">
 
-### Recordatorios locales
+### ![](https://img.shields.io/badge/-FFB020?style=flat-square) &nbsp;Recordatorios locales
 
 Aviso diario de entrenamiento que se omite en los días ya entrenados, y
 recordatorio semanal de pesaje. Sin servidor: todo se programa en el dispositivo.
@@ -94,7 +96,7 @@ recordatorio semanal de pesaje. Sin servidor: todo se programa en el dispositivo
 </td>
 <td width="50%" valign="top">
 
-### Sin conexión y sin cuentas
+### ![](https://img.shields.io/badge/-F2F3F5?style=flat-square) &nbsp;Sin conexión y sin cuentas
 
 Todos los datos viven en el dispositivo mediante `AsyncStorage`. No hay registro,
 ni servidor, ni telemetría.
@@ -103,9 +105,13 @@ ni servidor, ni telemetría.
 </tr>
 </table>
 
----
+<br>
 
-## Stack
+<div align="center">
+
+![Stack](https://img.shields.io/badge/STACK-B46BFF?style=for-the-badge&labelColor=B46BFF)
+
+</div>
 
 | Capa | Tecnología |
 | :--- | :--- |
@@ -117,9 +123,13 @@ ni servidor, ni telemetría.
 | Notificaciones | expo-notifications |
 | Tipografías | Space Grotesk · IBM Plex Mono |
 
----
+<br>
 
-## Estructura
+<div align="center">
+
+![Estructura](https://img.shields.io/badge/ESTRUCTURA-FF8A3D?style=for-the-badge&labelColor=FF8A3D)
+
+</div>
 
 ```
 src/
@@ -132,19 +142,18 @@ src/
 └── theme.ts        Tokens de color, tipografía y espaciado
 ```
 
----
+<br>
 
-## Puesta en marcha
+<div align="center">
+
+![Puesta en marcha](https://img.shields.io/badge/PUESTA_EN_MARCHA-FFB020?style=for-the-badge&labelColor=FFB020)
+
+</div>
 
 ```bash
 git clone https://github.com/1van106/AMASA.git
 cd AMASA
 npm install
-```
-
-**Desarrollo**
-
-```bash
 npx expo start
 ```
 
@@ -157,15 +166,24 @@ npx expo prebuild --platform android
 cd android && ./gradlew assembleRelease
 ```
 
-El APK queda en `android/app/build/outputs/apk/release/`.
+> [!TIP]
+> El APK queda en `android/app/build/outputs/apk/release/`.
 
 > [!NOTE]
 > Los recordatorios locales requieren una compilación propia. Expo Go retiró el
 > soporte de notificaciones en Android a partir del SDK 53.
 
----
+> [!WARNING]
+> `expo prebuild` **borra y regenera la carpeta `android/` entera**, incluido
+> `local.properties`. Haz copia antes si tienes cambios nativos a mano.
 
-## Diseño
+<br>
+
+<div align="center">
+
+![Diseño](https://img.shields.io/badge/PALETA-F2F3F5?style=for-the-badge&labelColor=F2F3F5)
+
+</div>
 
 Tema oscuro sobre `#0A0B0D`, con un color por grupo muscular que se mantiene
 coherente en toda la app: calendario, resumen anual, barra de navegación y
@@ -175,11 +193,11 @@ etiquetas de sesión.
 
 | Empuje | Tirón | Pierna | Carrera | Prioridad |
 | :---: | :---: | :---: | :---: | :---: |
-| `#4D7CFE` | `#00D68F` | `#B46BFF` | `#FF8A3D` | `#FFB020` |
+| ![](https://img.shields.io/badge/%234D7CFE-4D7CFE?style=for-the-badge&labelColor=4D7CFE) | ![](https://img.shields.io/badge/%2300D68F-00D68F?style=for-the-badge&labelColor=00D68F) | ![](https://img.shields.io/badge/%23B46BFF-B46BFF?style=for-the-badge&labelColor=B46BFF) | ![](https://img.shields.io/badge/%23FF8A3D-FF8A3D?style=for-the-badge&labelColor=FF8A3D) | ![](https://img.shields.io/badge/%23FFB020-FFB020?style=for-the-badge&labelColor=FFB020) |
 
 </div>
 
----
+<br>
 
 <div align="center">
 
